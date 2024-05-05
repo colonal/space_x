@@ -1,0 +1,7 @@
+{
+    "demo_page": {
+        "app_bar_title": "Flutter Demo Home Page",
+        "many_times": "You have pushed the button this many times:",
+        "increment": "Increment"
+    }
+}
