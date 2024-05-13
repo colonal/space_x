@@ -145,7 +145,7 @@ ApiErrorModel _handleError(DioException error) {
       if (error.response != null &&
           error.response?.statusCode != null &&
           error.response?.statusMessage != null) {
-        return ApiErrorModel.fromJson(error.response!.data);
+        return ApiErrorModel.fromJson({"message": error.response!.data});
       } else {
         return DataSource.DEFAULT.getFailure();
       }
@@ -153,7 +153,7 @@ ApiErrorModel _handleError(DioException error) {
       if (error.response != null &&
           error.response?.statusCode != null &&
           error.response?.statusMessage != null) {
-        return ApiErrorModel.fromJson(error.response!.data);
+        return ApiErrorModel.fromJson({"message": error.response!.data});
       } else {
         return DataSource.DEFAULT.getFailure();
       }
