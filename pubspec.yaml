@@ -55,6 +55,8 @@ dependencies:
   flutter_bloc: ^8.1.5
   # show images from the internet and keep them in the cache directory.
   cached_network_image: ^3.3.1
+  # This package customizes the default white native splash screen with background color, image, and supports dark mode, full screen
+  flutter_native_splash: ^2.4.0
 
 dev_dependencies:
   # Builds generated code for freezed and json_annotation.
