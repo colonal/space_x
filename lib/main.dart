@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 
 import 'core/constants/localization_constants.dart';
 import 'core/constants/routes_constants.dart';
@@ -8,11 +9,13 @@ import 'core/routing/routes_manager.dart';
 import 'core/theming/app_theme.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
+  WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   await Future.wait([
     EasyLocalization.ensureInitialized(),
     setUpGetIt(),
   ]);
+  FlutterNativeSplash.remove();
   runApp(
     EasyLocalization(
       supportedLocales: const [LocalizationConstants.ENGLISH_LOCALE],
