@@ -30,7 +30,7 @@ ThemeData darkTheme() {
 
     // icon color
     iconTheme: const IconThemeData(
-      color: ColorsManager.black,
+      color: ColorsManager.gray,
       size: 20,
     ),
 
@@ -143,6 +143,12 @@ ThemeData darkTheme() {
       labelLarge: TextStyle(
         fontSize: 20,
         fontWeight: FontWeightHelper.medium,
+        color: ColorsManager.white,
+        fontFamily: FontsManager.robotoCondensed,
+      ),
+      bodyLarge: TextStyle(
+        fontSize: 12,
+        fontWeight: FontWeightHelper.light,
         color: ColorsManager.white,
         fontFamily: FontsManager.robotoCondensed,
       ),

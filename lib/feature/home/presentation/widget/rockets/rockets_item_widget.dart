@@ -1,9 +1,11 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:space_x/core/extensions/navigator_extensions.dart';
 import 'package:space_x/core/extensions/style_extensions.dart';
 
 import '../../../../../core/constants/colors.dart';
+import '../../../../../core/constants/routes_constants.dart';
 import '../../../../../core/widget/image_network_widget.dart';
 import '../../../data/model/rockets_response.dart';
 
@@ -19,7 +21,7 @@ class RocketsItemWidget extends StatelessWidget {
         borderRadius: BorderRadius.circular(20),
         child: GestureDetector(
           onTap: () {
-            // TODO Navigate to Rocket Details Screen
+            context.push(Routes.rocketsRoute, arguments: rockets);
           },
           child: Stack(
             children: [
