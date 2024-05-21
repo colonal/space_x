@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:space_x/feature/capsules/data/model/capsule.dart';
 
 import '../../../../core/constants/api_constants.dart';
 import 'package:retrofit/http.dart';
@@ -14,4 +15,8 @@ abstract class HomeRemoteDataSources {
 
   @GET(ApiConstants.rockets)
   Future<List<RocketsResponse>> rockets();
+
+ @GET(ApiConstants.capsulesEndPoint)
+  Future<List<Capsule>> fetchCapsules();
+
 }

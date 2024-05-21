@@ -1,6 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:space_x/feature/capsules/data/repo/capsules_repo.dart';
+import 'package:space_x/feature/capsules/logic/cubit/capsules_cubit.dart';
 
 import '../../feature/home/data/data_sources/home_data_sources.dart';
 import '../../feature/home/data/repositories/home_repositories.dart';
@@ -30,4 +32,11 @@ Future<void> setUpGetIt() async {
       () => HomeRepositories(homeRemoteDataSources: getIt()));
   getIt.registerFactory<RocketsCubit>(
       () => RocketsCubit(homeRepositories: getIt()));
+
+  // capssules
+
+  getIt.registerLazySingleton<CapsulesRepo>(
+      () => CapsulesRepo(homeRemoteDataSources: getIt()));
+  getIt.registerFactory<CapsulesCubit>(() => CapsulesCubit(getIt()));
+  //
 }

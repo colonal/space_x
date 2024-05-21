@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:space_x/feature/capsules/logic/cubit/capsules_cubit.dart';
+import 'package:space_x/feature/capsules/presentation/capsules_view.dart';
 
 import '../../feature/home/logic/rockets/rockets_cubit.dart';
 import '../../feature/home/presentation/screen/home_screen.dart';
@@ -20,6 +22,18 @@ class RouteGenerator {
             child: const HomeScreen(),
           ),
         );
+         case Routes.capsules:
+        return MaterialPageRoute(
+          builder: (_) => MultiBlocProvider(
+            providers: [
+              BlocProvider<CapsulesCubit>(
+                create: (_) => di.getIt<CapsulesCubit>()..fetchCapsules(),
+              ),
+            ],
+            child: const CapsulesView(),
+          ),
+        );
+
 
       default:
         return unDefinedRoute();
