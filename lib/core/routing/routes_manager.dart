@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
 import 'package:space_x/core/extensions/mapper.dart';
+import 'package:space_x/feature/capsules/logic/cubit/capsules_cubit.dart';
+import 'package:space_x/feature/capsules/presentation/capsules_view.dart';
+
 
 import '../../feature/home/data/model/rockets_response.dart';
 import '../../feature/home/logic/rockets/rockets_cubit.dart';
@@ -24,6 +28,7 @@ class RouteGenerator {
             child: const HomeScreen(),
           ),
         );
+
       case Routes.rocketsRoute:
         final rocketsResponse = settings.arguments as RocketsResponse?;
         if (rocketsResponse == null) {
@@ -39,6 +44,21 @@ class RouteGenerator {
             child: RocketScreen(rocket: rocketsResponse.toRocketModel()),
           ),
         );
+
+         case Routes.capsules:
+        return MaterialPageRoute(
+          builder: (_) => MultiBlocProvider(
+            providers: [
+              BlocProvider<CapsulesCubit>(
+                create: (_) => di.getIt<CapsulesCubit>()..fetchCapsules(),
+              ),
+            ],
+            child: const CapsulesView(),
+          ),
+        );
+
+
+
       default:
         return unDefinedRoute();
     }
