@@ -4,9 +4,7 @@ import 'package:space_x/core/extensions/style_extensions.dart';
 
 class RocketIconInfo extends StatelessWidget {
   final String title;
-
   final String image;
-
   final Color? colorFilter;
 
   const RocketIconInfo(
