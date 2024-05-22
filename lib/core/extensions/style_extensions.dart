@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 extension Style on BuildContext {
   TextStyle? get font18WhiteBold => Theme.of(this).textTheme.titleLarge;
   TextStyle? get font12BlueMedium => Theme.of(this).textTheme.headlineSmall;
+  TextStyle? get font12WhiteLight => Theme.of(this).textTheme.bodyLarge;
   TextStyle? get font14BlueBold => Theme.of(this).textTheme.headlineMedium;
   TextStyle? get font16BlackBold => Theme.of(this).textTheme.displayMedium;
   TextStyle? get font16WhiteRegular => Theme.of(this).textTheme.bodyMedium;

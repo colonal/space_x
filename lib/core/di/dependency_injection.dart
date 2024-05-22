@@ -7,6 +7,7 @@ import 'package:space_x/feature/capsules/logic/cubit/capsules_cubit.dart';
 import '../../feature/home/data/data_sources/home_data_sources.dart';
 import '../../feature/home/data/repositories/home_repositories.dart';
 import '../../feature/home/logic/rockets/rockets_cubit.dart';
+import '../../feature/rockets/logic/rocket_cubit.dart';
 import '../helpers/cache_helper.dart';
 import '../networking/dio_factory.dart';
 
@@ -34,9 +35,10 @@ Future<void> setUpGetIt() async {
       () => RocketsCubit(homeRepositories: getIt()));
 
   // capssules
-
   getIt.registerLazySingleton<CapsulesRepo>(
       () => CapsulesRepo(homeRemoteDataSources: getIt()));
   getIt.registerFactory<CapsulesCubit>(() => CapsulesCubit(getIt()));
-  //
+  
+  // Rocket
+  getIt.registerFactory<RocketCubit>(() => RocketCubit());
 }

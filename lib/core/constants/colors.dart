@@ -10,4 +10,5 @@ class ColorsManager {
   static const Color disabledColor = Color(0x4DFFFFFF);
   static const Color activeColor = Color(0xFF99ff99);
   static const Color retiredColor = Color(0xFFff4c4c);
+  static const Color warningColor = Color(0xFFFFA497);
 }

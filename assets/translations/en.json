@@ -1,8 +1,17 @@
 {
     "common": {
-        "tryAgain": "Try Again"
+        "tryAgain": "Try Again",
+        "could_not_launch": "Could not launch"
     },
     "home": {
         "rockets": "Upcoming Rockets"
+    },
+    "rocket": {
+        "active": "Active",
+        "inactive": "Inactive",
+        "cost": "Cost",
+        "success_rate": "Success Rate",
+        "stages": "Stages",
+        "wikipedia": "wikipedia"
     }
 }
