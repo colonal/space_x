@@ -16,7 +16,7 @@ class CacheHelpers {
         CacheConstants.KEY_ONBOARDING_SCREEN_VIEWED, true);
   }
 
-  Future<bool> isOnBoardingScreenViewed() async {
+  bool isOnBoardingScreenViewed() {
     return sharedPreferences
             .getBool(CacheConstants.KEY_ONBOARDING_SCREEN_VIEWED) ??
         false;

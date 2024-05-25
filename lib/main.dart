@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 
 import 'core/constants/localization_constants.dart';
-import 'core/constants/routes_constants.dart';
 import 'core/di/dependency_injection.dart';
 import 'core/routing/routes_manager.dart';
 import 'core/theming/app_theme.dart';
@@ -33,8 +32,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      onGenerateRoute: RouteGenerator.getRoute,
-      initialRoute: Routes.capsules,
+      onGenerateRoute: getIt<RouteGenerator>().getRoute,
+      initialRoute: getIt<RouteGenerator>().initialRoute,
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
       locale: context.locale,
