@@ -13,5 +13,11 @@
         "success_rate": "Success Rate",
         "stages": "Stages",
         "wikipedia": "wikipedia"
+    },
+    "onboarding": {
+        "start": "START",
+        "massage_0": "Discover all upcoming and\npast rocket launches of SpaceX.",
+        "massage_1": "Discover all upcoming and\npast capsules launches of SpaceX.",
+        "massage_2": "Unleash your passion and\nexplore SpaceX up close start now"
     }
 }

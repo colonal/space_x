@@ -10,4 +10,7 @@ class AssetsImages {
   static const String costSVG = "${assetsPath}cost.svg";
   static const String doneSVG = "${assetsPath}done.svg";
   static const String stagesSVG = "${assetsPath}stages.svg";
+  static const String onboarding0 = "${assetsPath}onboarding_0.png";
+  static const String onboarding1 = "${assetsPath}onboarding_1.png";
+  static const String onboarding2 = "${assetsPath}onboarding_2.png";
 }
