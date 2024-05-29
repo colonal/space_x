@@ -4,7 +4,14 @@
         "could_not_launch": "Could not launch"
     },
     "home": {
-        "rockets": "Upcoming Rockets"
+        "rockets": "Upcoming Rockets",
+        "topics": {
+            "title": "Explore Our Topics",
+            "crew": {
+                "title": "Crew",
+                "message": "know about the launches name, state, details and more"
+            }
+        }
     },
     "rocket": {
         "active": "Active",

@@ -10,6 +10,7 @@ import 'package:space_x/feature/crew/logic/crew_cubit.dart';
 import '../../feature/home/data/data_sources/home_data_sources.dart';
 import '../../feature/home/data/repositories/home_repositories.dart';
 import '../../feature/home/logic/rockets/rockets_cubit.dart';
+import '../../feature/home/logic/topics/topics_cubit.dart';
 import '../../feature/onboarding/logic/onboarding_cubit.dart';
 import '../../feature/rockets/logic/rocket_cubit.dart';
 import '../helpers/cache_helper.dart';
@@ -41,6 +42,7 @@ Future<void> setUpGetIt() async {
       () => HomeRepositories(homeRemoteDataSources: getIt()));
   getIt.registerFactory<RocketsCubit>(
       () => RocketsCubit(homeRepositories: getIt()));
+  getIt.registerFactory<TopicsCubit>(() => TopicsCubit());
 
   // capssules
   getIt.registerLazySingleton<CapsulesRepo>(

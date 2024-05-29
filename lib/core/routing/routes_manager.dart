@@ -9,6 +9,7 @@ import '../../feature/crew/logic/crew_cubit.dart';
 import '../../feature/crew/presentation/screen/crew_screen.dart';
 import '../../feature/home/data/model/rockets_response.dart';
 import '../../feature/home/logic/rockets/rockets_cubit.dart';
+import '../../feature/home/logic/topics/topics_cubit.dart';
 import '../../feature/home/presentation/screen/home_screen.dart';
 import '../../feature/onboarding/logic/onboarding_cubit.dart';
 import '../../feature/onboarding/presentation/screen/onboarding_screen.dart';
@@ -40,6 +41,9 @@ class RouteGenerator {
             providers: [
               BlocProvider<RocketsCubit>(
                 create: (_) => di.getIt<RocketsCubit>()..emitRocketsState(),
+              ),
+              BlocProvider<TopicsCubit>(
+                create: (_) => di.getIt<TopicsCubit>(),
               ),
             ],
             child: const HomeScreen(),

@@ -18,4 +18,5 @@ class AssetsImages {
   static const String activeSVG = "${assetsPath}active.svg";
   static const String inactiveSVG = "${assetsPath}inactive.svg";
   static const String noInternetGif = "${assetsPath}no_internet.gif";
+  static const String topicsCrew = "${assetsPath}topics_crew.png";
 }
