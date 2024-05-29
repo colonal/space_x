@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:space_x/core/extensions/style_extensions.dart';
+import 'package:space_x/core/extensions/theme_extensions.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../../../core/constants/assets.dart';
@@ -17,10 +18,10 @@ class CrewItemWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       borderOnForeground: true,
-      shadowColor: Colors.white,
+      shadowColor: context.theme.disabledColor,
       shape: RoundedRectangleBorder(
-        side: const BorderSide(
-          color: Colors.white,
+        side: BorderSide(
+          color: context.theme.disabledColor,
           width: 1,
         ),
         borderRadius: BorderRadius.circular(25),
@@ -76,8 +77,8 @@ class CrewItemWidget extends StatelessWidget {
                     height: 30,
                     padding: const EdgeInsets.symmetric(vertical: 10),
                     shape: RoundedRectangleBorder(
-                      side: const BorderSide(
-                        color: Colors.white,
+                      side: BorderSide(
+                        color: context.theme.primaryColorLight,
                         width: 1,
                       ),
                       borderRadius: BorderRadius.circular(5),
