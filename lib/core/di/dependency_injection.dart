@@ -3,6 +3,9 @@ import 'package:get_it/get_it.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:space_x/feature/capsules/data/repo/capsules_repo.dart';
 import 'package:space_x/feature/capsules/logic/cubit/capsules_cubit.dart';
+import 'package:space_x/feature/crew/data/data_sources/crew_data_sources.dart';
+import 'package:space_x/feature/crew/data/repositories/crew_repositories.dart';
+import 'package:space_x/feature/crew/logic/crew_cubit.dart';
 
 import '../../feature/home/data/data_sources/home_data_sources.dart';
 import '../../feature/home/data/repositories/home_repositories.dart';
@@ -49,4 +52,11 @@ Future<void> setUpGetIt() async {
 
   // Onboarding
   getIt.registerFactory<OnboardingCubit>(() => OnboardingCubit(getIt()));
+
+  // crew
+  getIt.registerLazySingleton<CrewRemoteDataSources>(
+      () => CrewRemoteDataSources(getIt()));
+  getIt.registerLazySingleton<CrewRepositories>(
+      () => CrewRepositories(crewRemoteDataSources: getIt()));
+  getIt.registerFactory<CrewCubit>(() => CrewCubit(repositories: getIt()));
 }

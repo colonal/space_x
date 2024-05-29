@@ -1,6 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 import '../constants/assets.dart';
 
@@ -22,8 +21,8 @@ class FailureWidget extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Expanded(
-                child: SvgPicture.asset(
-                  AssetsImages.failureSVG,
+                child: Image.asset(
+                  AssetsImages.noInternetGif,
                 ),
               ),
               SizedBox(height: constraints.maxWidth * .01),

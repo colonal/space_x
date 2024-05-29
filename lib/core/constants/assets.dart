@@ -13,4 +13,9 @@ class AssetsImages {
   static const String onboarding0 = "${assetsPath}onboarding_0.png";
   static const String onboarding1 = "${assetsPath}onboarding_1.png";
   static const String onboarding2 = "${assetsPath}onboarding_2.png";
+  static const String rocketSpaceSVG = "${assetsPath}rocket_space.svg";
+  static const String launchSVG = "${assetsPath}launch.svg";
+  static const String activeSVG = "${assetsPath}active.svg";
+  static const String inactiveSVG = "${assetsPath}inactive.svg";
+  static const String noInternetGif = "${assetsPath}no_internet.gif";
 }

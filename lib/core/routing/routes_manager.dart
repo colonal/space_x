@@ -5,6 +5,8 @@ import 'package:space_x/core/extensions/mapper.dart';
 import 'package:space_x/feature/capsules/logic/cubit/capsules_cubit.dart';
 import 'package:space_x/feature/capsules/presentation/capsules_view.dart';
 
+import '../../feature/crew/logic/crew_cubit.dart';
+import '../../feature/crew/presentation/screen/crew_screen.dart';
 import '../../feature/home/data/model/rockets_response.dart';
 import '../../feature/home/logic/rockets/rockets_cubit.dart';
 import '../../feature/home/presentation/screen/home_screen.dart';
@@ -79,6 +81,17 @@ class RouteGenerator {
               BlocProvider(create: (_) => di.getIt<OnboardingCubit>())
             ],
             child: const OnboardingScreen(),
+          ),
+        );
+
+      case Routes.crewRoute:
+        return MaterialPageRoute(
+          builder: (_) => MultiBlocProvider(
+            providers: [
+              BlocProvider(
+                  create: (_) => di.getIt<CrewCubit>()..emitCrewState()),
+            ],
+            child: const CrewScreen(),
           ),
         );
       default:
