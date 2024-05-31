@@ -23,4 +23,5 @@ class AssetsImages {
   static const String shipRoleSVG = "${assetsPath}ship_role.svg";
   static const String homeSVG = "${assetsPath}home.svg";
   static const String linkSVG = "${assetsPath}link.svg";
+  static const String topicsShips = "${assetsPath}ships.jpg";
 }

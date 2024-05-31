@@ -10,6 +10,10 @@
             "crew": {
                 "title": "Crew",
                 "message": "know about the launches name, state, details and more"
+            },
+            "ships": {
+                "title": "Ships",
+                "message": "Know about active Ships, their description, company and more"
             }
         }
     },
