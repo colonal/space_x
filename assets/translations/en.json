@@ -33,5 +33,12 @@
         "wikipedia": "wikipedia",
         "active": "Active",
         "inactive": "Inactive"
+    },
+    "ships": {
+        "title": "Ships",
+        "launch": "{} Launches",
+        "see_article": "See Article",
+        "active": "Active",
+        "inactive": "Inactive"
     }
 }

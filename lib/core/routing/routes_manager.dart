@@ -15,6 +15,8 @@ import '../../feature/onboarding/logic/onboarding_cubit.dart';
 import '../../feature/onboarding/presentation/screen/onboarding_screen.dart';
 import '../../feature/rockets/logic/rocket_cubit.dart';
 import '../../feature/rockets/presentation/screen/rocket_screen.dart';
+import '../../feature/ships/logic/ships_cubit.dart';
+import '../../feature/ships/presentation/screen/ships_screen.dart';
 import '../constants/routes_constants.dart';
 import '../di/dependency_injection.dart' as di;
 import '../helpers/cache_helper.dart';
@@ -96,6 +98,16 @@ class RouteGenerator {
                   create: (_) => di.getIt<CrewCubit>()..emitCrewState()),
             ],
             child: const CrewScreen(),
+          ),
+        );
+      case Routes.shipsRoute:
+        return MaterialPageRoute(
+          builder: (_) => MultiBlocProvider(
+            providers: [
+              BlocProvider(
+                  create: (_) => di.getIt<ShipsCubit>()..emitShipsState())
+            ],
+            child: const ShipsScreen(),
           ),
         );
       default:
