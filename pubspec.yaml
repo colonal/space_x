@@ -59,6 +59,12 @@ dependencies:
   flutter_native_splash: ^2.4.0
   # A Flutter plugin for launching a URL.
   url_launcher: ^6.2.6
+  # Adobe After Effects animations exported as json with Bodymovin and renders them natively on mobile! 
+  lottie: ^3.1.2
+  # package which contains a collection of some cool and awesome text animations.
+  animated_text_kit: ^4.2.2
+  # This Flutter plugin provides an API for querying information about an application package.
+  package_info_plus: ^8.0.0
 
 dev_dependencies:
   # Builds generated code for freezed and json_annotation.
@@ -95,6 +101,7 @@ flutter:
   assets:
     - assets/translations/
     - assets/images/
+    - assets/lottie/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

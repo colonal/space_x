@@ -1,5 +1,6 @@
 class AssetsImages {
   static const String assetsPath = "assets/images/";
+  static const String lottiePath = "assets/lottie/";
   static const String logoSVG = "${assetsPath}SpaceX_Logo.svg";
   static const String bookmarkSVG = "${assetsPath}bookmark-Bold.svg";
   static const String searchSVG = "${assetsPath}search-Bold.svg";
@@ -19,4 +20,15 @@ class AssetsImages {
   static const String inactiveSVG = "${assetsPath}inactive.svg";
   static const String noInternetGif = "${assetsPath}no_internet.gif";
   static const String topicsCrew = "${assetsPath}topics_crew.png";
+  static const String space = "${assetsPath}space.png";
+  static const String arrowDownLottie = "${lottiePath}arrow_down.json";
+  static const String spaceXLogoSVG = "${assetsPath}SpaceXLogo.svg";
+  static const String elonMusk = "${assetsPath}elon_musk.jpg";
+  static const String spaceXSmallLogo = "${assetsPath}SpaceXSmallLogo.png";
+  static const String dragonCrew = "${assetsPath}Dragon-Crew.png";
+  static const String spaceXRocket = "${assetsPath}spaceXRocket.png";
+  static const String appIcon = "${assetsPath}app_icon.png";
+  static const String animationAstronaut =
+      "${assetsPath}animation_astronaut.gif";
+  static const String spaceLottie = "${lottiePath}space.json";
 }
