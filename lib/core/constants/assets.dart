@@ -31,4 +31,5 @@ class AssetsImages {
   static const String animationAstronaut =
       "${assetsPath}animation_astronaut.gif";
   static const String spaceLottie = "${lottiePath}space.json";
+  static const String topicsAboutSpaceX = "${assetsPath}about_space_x.jpg";
 }
