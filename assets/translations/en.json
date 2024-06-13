@@ -11,6 +11,10 @@
                 "title": "Crew",
                 "message": "know about the launches name, state, details and more"
             },
+            "launches": {
+                "title": "Launches",
+                "message": "know about the launches name, state, details and more"
+            },
             "company": {
                 "title": "About SpaceX",
                 "message": "know all about SpaceX details and more"

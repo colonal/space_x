@@ -32,4 +32,5 @@ class AssetsImages {
       "${assetsPath}animation_astronaut.gif";
   static const String spaceLottie = "${lottiePath}space.json";
   static const String topicsAboutSpaceX = "${assetsPath}about_space_x.jpg";
+  static const String topicsLaunches = "${assetsPath}topics_launches.png";
 }
