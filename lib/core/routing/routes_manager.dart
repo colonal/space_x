@@ -13,6 +13,8 @@ import '../../feature/home/data/model/rockets_response.dart';
 import '../../feature/home/logic/rockets/rockets_cubit.dart';
 import '../../feature/home/logic/topics/topics_cubit.dart';
 import '../../feature/home/presentation/screen/home_screen.dart';
+import '../../feature/launches/logic/launches_cubit.dart';
+import '../../feature/launches/presentation/screen/launches_screen.dart';
 import '../../feature/onboarding/logic/onboarding_cubit.dart';
 import '../../feature/onboarding/presentation/screen/onboarding_screen.dart';
 import '../../feature/rockets/logic/rocket_cubit.dart';
@@ -108,6 +110,17 @@ class RouteGenerator {
                   create: (_) => di.getIt<CompanyCubit>()..emitCompanyState()),
             ],
             child: const CompanyScreen(),
+          ),
+        );
+      case Routes.launchesRoute:
+        return MaterialPageRoute(
+          builder: (_) => MultiBlocProvider(
+            providers: [
+              BlocProvider(
+                create: (_) => di.getIt<LaunchesCubit>()..emitLaunchesState(),
+              ),
+            ],
+            child: const LaunchesScreen(),
           ),
         );
       default:

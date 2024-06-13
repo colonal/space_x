@@ -15,6 +15,9 @@ import '../../feature/home/data/data_sources/home_data_sources.dart';
 import '../../feature/home/data/repositories/home_repositories.dart';
 import '../../feature/home/logic/rockets/rockets_cubit.dart';
 import '../../feature/home/logic/topics/topics_cubit.dart';
+import '../../feature/launches/data/data_sources/launches_data_sources.dart';
+import '../../feature/launches/data/repositories/launches_repositories.dart';
+import '../../feature/launches/logic/launches_cubit.dart';
 import '../../feature/onboarding/logic/onboarding_cubit.dart';
 import '../../feature/rockets/logic/rocket_cubit.dart';
 import '../helpers/cache_helper.dart';
@@ -77,4 +80,12 @@ Future<void> setUpGetIt() async {
       () => CompanyRepository(dataSources: getIt()));
   getIt.registerFactory<CompanyCubit>(
       () => CompanyCubit(repository: getIt(), packageInfo: getIt()));
+
+  // Launches
+  getIt.registerLazySingleton<LaunchesDataSources>(
+      () => LaunchesDataSources(getIt()));
+  getIt.registerLazySingleton<LaunchesRepositories>(
+      () => LaunchesRepositories(dataSources: getIt()));
+  getIt
+      .registerFactory<LaunchesCubit>(() => LaunchesCubit(repository: getIt()));
 }
