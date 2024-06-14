@@ -1,6 +1,7 @@
 class AssetsImages {
   static const String assetsPath = "assets/images/";
   static const String lottiePath = "assets/lottie/";
+  static const String launcherPath = "assets/launcher_icons/";
   static const String logoSVG = "${assetsPath}SpaceX_Logo.svg";
   static const String bookmarkSVG = "${assetsPath}bookmark-Bold.svg";
   static const String searchSVG = "${assetsPath}search-Bold.svg";
@@ -27,7 +28,7 @@ class AssetsImages {
   static const String spaceXSmallLogo = "${assetsPath}SpaceXSmallLogo.png";
   static const String dragonCrew = "${assetsPath}Dragon-Crew.png";
   static const String spaceXRocket = "${assetsPath}spaceXRocket.png";
-  static const String appIcon = "${assetsPath}app_icon.png";
+  static const String appIcon = "${launcherPath}ic_launcher_foreground.png";
   static const String animationAstronaut =
       "${assetsPath}animation_astronaut.gif";
   static const String spaceLottie = "${lottiePath}space.json";
