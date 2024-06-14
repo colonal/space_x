@@ -17,6 +17,9 @@ import '../../feature/home/logic/rockets/rockets_cubit.dart';
 import '../../feature/home/logic/topics/topics_cubit.dart';
 import '../../feature/onboarding/logic/onboarding_cubit.dart';
 import '../../feature/rockets/logic/rocket_cubit.dart';
+import '../../feature/ships/data/data_sources/ships_data_sources.dart';
+import '../../feature/ships/data/repositories/ships_repositories.dart';
+import '../../feature/ships/logic/ships_cubit.dart';
 import '../helpers/cache_helper.dart';
 import '../networking/dio_factory.dart';
 import '../routing/routes_manager.dart';
@@ -77,4 +80,12 @@ Future<void> setUpGetIt() async {
       () => CompanyRepository(dataSources: getIt()));
   getIt.registerFactory<CompanyCubit>(
       () => CompanyCubit(repository: getIt(), packageInfo: getIt()));
+  
+  // ships
+  getIt.registerLazySingleton<ShipsRemoteDataSources>(
+      () => ShipsRemoteDataSources(getIt()));
+  getIt.registerLazySingleton<ShipsRepositories>(
+      () => ShipsRepositories(shipsRemoteDataSources: getIt()));
+  getIt.registerFactory<ShipsCubit>(() => ShipsCubit(repositories: getIt()));
+
 }

@@ -14,6 +14,10 @@
             "company": {
                 "title": "About SpaceX",
                 "message": "know all about SpaceX details and more"
+            },
+            "ships": {
+                "title": "Ships",
+                "message": "Know about active Ships, their description, company and more"
             }
         }
     },
@@ -61,5 +65,12 @@
             "colonal": "Colonal",
             "year": " © {}"
         }
+    },
+    "ships": {
+        "title": "Ships",
+        "launch": "{} Launches",
+        "see_article": "See Article",
+        "active": "Active",
+        "inactive": "Inactive"
     }
 }
