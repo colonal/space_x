@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../../../../core/constants/assets.dart';
-import 'company_app_bar.dart';
+import 'company_header.dart';
+import 'company_logo.dart';
 
 class CompanyLoadingWidget extends StatelessWidget {
   const CompanyLoadingWidget({super.key});
@@ -9,20 +10,29 @@ class CompanyLoadingWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CompanyAppBar(),
-      body: SizedBox.expand(
-        child: Align(
-          alignment: Alignment.bottomCenter,
-          child: Padding(
-            padding: const EdgeInsets.only(bottom: 20),
-            child: Image.asset(
-              AssetsImages.animationAstronaut,
-              fit: BoxFit.fitHeight,
-              alignment: Alignment.topCenter,
-              height: 200,
+      body: Column(
+        children: [
+          const CompanyHeader(),
+          const CompanyLogo(),
+          const SizedBox(height: 30),
+          Expanded(
+            child: Align(
+              alignment: Alignment.bottomCenter,
+              child: FittedBox(
+                fit: BoxFit.scaleDown,
+                child: Padding(
+                  padding: const EdgeInsets.only(bottom: 20),
+                  child: Image.asset(
+                    AssetsImages.animationAstronaut,
+                    fit: BoxFit.fitHeight,
+                    alignment: Alignment.topCenter,
+                    height: 200,
+                  ),
+                ),
+              ),
             ),
           ),
-        ),
+        ],
       ),
     );
   }
