@@ -12,6 +12,8 @@ extension Style on BuildContext {
   TextStyle? get font16WhiteRegular => Theme.of(this).textTheme.bodyMedium;
   TextStyle? get font12BlueBold => Theme.of(this).textTheme.displaySmall;
   TextStyle? get font24WhiteBold => Theme.of(this).textTheme.headlineLarge;
+  TextStyle? get font30WhiteBold =>
+      Theme.of(this).textTheme.headlineLarge?.copyWith(fontSize: 30.0);
   TextStyle? get font14WhiteLight => Theme.of(this).textTheme.bodySmall;
   TextStyle? get font20WhiteMedium => Theme.of(this).textTheme.labelLarge;
 }

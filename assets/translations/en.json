@@ -11,6 +11,10 @@
                 "title": "Crew",
                 "message": "know about the launches name, state, details and more"
             },
+            "launches": {
+                "title": "Launches",
+                "message": "know about the launches name, state, details and more"
+            },
             "company": {
                 "title": "About SpaceX",
                 "message": "know all about SpaceX details and more"
@@ -65,6 +69,18 @@
             "colonal": "Colonal",
             "year": " © {}"
         }
+    },
+    "launches": {
+        "title": "Launches",
+        "total_launches": "Total launches",
+        "total_landings": "Total landings",
+        "total_failures": "total_failures",
+        "date_not_found": "Date not found",
+        "name_not_found": "Name not found",
+        "unknown_launch_status": "Unknown launch status",
+        "no_details": "No Details",
+        "successful_launch": "Successful Launch",
+        "failed_launch": "Failed Launch"
     },
     "ships": {
         "title": "Ships",
