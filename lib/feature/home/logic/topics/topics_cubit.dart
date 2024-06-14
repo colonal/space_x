@@ -17,5 +17,11 @@ class TopicsCubit extends Cubit<TopicsState> {
           message: "home.topics.crew.message",
           routes: Routes.crewRoute,
         ),
+        Topics(
+          image: AssetsImages.topicsShips,
+          title: "home.topics.ships.title",
+          message: "home.topics.ships.message",
+          routes: Routes.shipsRoute,
+        ),
       ];
 }
