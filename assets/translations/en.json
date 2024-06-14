@@ -18,6 +18,10 @@
             "company": {
                 "title": "About SpaceX",
                 "message": "know all about SpaceX details and more"
+            },
+            "ships": {
+                "title": "Ships",
+                "message": "Know about active Ships, their description, company and more"
             }
         }
     },
@@ -77,5 +81,12 @@
         "no_details": "No Details",
         "successful_launch": "Successful Launch",
         "failed_launch": "Failed Launch"
+    },
+    "ships": {
+        "title": "Ships",
+        "launch": "{} Launches",
+        "see_article": "See Article",
+        "active": "Active",
+        "inactive": "Inactive"
     }
 }

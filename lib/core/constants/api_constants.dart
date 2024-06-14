@@ -5,6 +5,7 @@ class ApiConstants {
   static const String crew = "crew";
   static const String company = "company";
   static const String launches = "launches";
+  static const String ships = "ships";
 }
 
 class ApiErrors {

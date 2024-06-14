@@ -33,4 +33,9 @@ class AssetsImages {
   static const String spaceLottie = "${lottiePath}space.json";
   static const String topicsAboutSpaceX = "${assetsPath}about_space_x.jpg";
   static const String topicsLaunches = "${assetsPath}topics_launches.png";
+  static const String calendarSVG = "${assetsPath}calendar.svg";
+  static const String shipRoleSVG = "${assetsPath}ship_role.svg";
+  static const String homeSVG = "${assetsPath}home.svg";
+  static const String linkSVG = "${assetsPath}link.svg";
+  static const String topicsShips = "${assetsPath}ships.jpg";
 }
