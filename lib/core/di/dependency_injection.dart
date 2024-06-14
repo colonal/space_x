@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:space_x/feature/capsules/data/repo/capsules_repo.dart';
 import 'package:space_x/feature/capsules/logic/cubit/capsules_cubit.dart';
@@ -7,6 +8,9 @@ import 'package:space_x/feature/crew/data/data_sources/crew_data_sources.dart';
 import 'package:space_x/feature/crew/data/repositories/crew_repositories.dart';
 import 'package:space_x/feature/crew/logic/crew_cubit.dart';
 
+import '../../feature/company/data/data_sources/company_data_sources.dart';
+import '../../feature/company/data/repositories/company_repository.dart';
+import '../../feature/company/logic/company_cubit.dart';
 import '../../feature/home/data/data_sources/home_data_sources.dart';
 import '../../feature/home/data/repositories/home_repositories.dart';
 import '../../feature/home/logic/rockets/rockets_cubit.dart';
@@ -26,6 +30,10 @@ Future<void> setUpGetIt() async {
   // Dio
   Dio dio = DioFactory.getDio();
   getIt.registerLazySingleton<Dio>(() => dio);
+
+  // App Info
+  PackageInfo packageInfo = await PackageInfo.fromPlatform();
+  getIt.registerLazySingleton<PackageInfo>(() => packageInfo);
 
   // Cache Helpers
   final SharedPreferences sharedPreferences =
@@ -65,10 +73,19 @@ Future<void> setUpGetIt() async {
       () => CrewRepositories(crewRemoteDataSources: getIt()));
   getIt.registerFactory<CrewCubit>(() => CrewCubit(repositories: getIt()));
 
+  // Company
+  getIt.registerLazySingleton<CompanyRemoteDataSources>(
+      () => CompanyRemoteDataSources(getIt()));
+  getIt.registerLazySingleton<CompanyRepository>(
+      () => CompanyRepository(dataSources: getIt()));
+  getIt.registerFactory<CompanyCubit>(
+      () => CompanyCubit(repository: getIt(), packageInfo: getIt()));
+  
   // ships
   getIt.registerLazySingleton<ShipsRemoteDataSources>(
       () => ShipsRemoteDataSources(getIt()));
   getIt.registerLazySingleton<ShipsRepositories>(
       () => ShipsRepositories(shipsRemoteDataSources: getIt()));
   getIt.registerFactory<ShipsCubit>(() => ShipsCubit(repositories: getIt()));
+
 }

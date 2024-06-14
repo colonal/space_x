@@ -3,6 +3,7 @@ class ApiConstants {
   static const String rockets = "rockets";
   static const String capsulesEndPoint = "capsules";
   static const String crew = "crew";
+  static const String company = "company";
   static const String ships = "ships";
 }
 

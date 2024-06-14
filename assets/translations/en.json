@@ -11,6 +11,10 @@
                 "title": "Crew",
                 "message": "know about the launches name, state, details and more"
             },
+            "company": {
+                "title": "About SpaceX",
+                "message": "know all about SpaceX details and more"
+            },
             "ships": {
                 "title": "Ships",
                 "message": "Know about active Ships, their description, company and more"
@@ -37,6 +41,30 @@
         "wikipedia": "wikipedia",
         "active": "Active",
         "inactive": "Inactive"
+    },
+    "company": {
+        "title": "Company Info",
+        "message": "\"I think we are at the dawn of a new era in commercial space exploration\" - Elon Musk",
+        "employees": "Employees",
+        "launch_sites": "Launch Sites",
+        "vehicles": "Vehicles",
+        "valuation": "Valuation",
+        "ceo_cto": "CEO and CTO of {}",
+        "ceo_description": "Elon Reeve Musk is a businessman and investor. He is the founder, chairman, CEO, and CTO of SpaceX; angel investor, CEO, product architect, and former chairman of Tesla, Inc.; owner, executive chairman, and CTO of X Corp.",
+        "what_space_x": "What is SpaceX",
+        "links": {
+            "title": "Important Links",
+            "website": "Website",
+            "flickr": "Flickr",
+            "twitter": "Twitter",
+            "elon_twitter": "Elon Twitter"
+        },
+        "copyright": {
+            "app_name_version": "{} {}",
+            "space": "  .  ",
+            "colonal": "Colonal",
+            "year": " © {}"
+        }
     },
     "ships": {
         "title": "Ships",
