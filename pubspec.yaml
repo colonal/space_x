@@ -76,6 +76,8 @@ dev_dependencies:
   freezed: ^2.4.7
   # JSON serialization/deserialization for development/testing.
   json_serializable: ^6.6.0
+  # A command-line tool which simplifies the task of updating your Flutter app's launcher icon
+  flutter_launcher_icons: ^0.13.1
 
   retrofit_generator: '>=7.0.0 <8.0.0'
 
@@ -102,6 +104,7 @@ flutter:
     - assets/translations/
     - assets/images/
     - assets/lottie/
+    - assets/launcher_icons/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
