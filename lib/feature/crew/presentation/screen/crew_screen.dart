@@ -6,7 +6,7 @@ import '../../logic/crew_cubit.dart';
 import '../../logic/crew_state.dart';
 import '../widget/crew_failure_widget.dart';
 import '../widget/crew_widget.dart';
-import '../widget/crew_loading_widget.dart';
+import '../widget/crew_skeleton_widget.dart';
 
 class CrewScreen extends StatelessWidget {
   const CrewScreen({super.key});
@@ -20,7 +20,7 @@ class CrewScreen extends StatelessWidget {
             title: Text("crew.title".tr()),
           ),
           body: state.when(
-            loading: () => const CrewLoadingWidget(),
+            loading: () => const CrewSkeletonWidget(),
             success: () => const CrewWidget(),
             error: (message) => CrewFailureWidget(message),
           ),
