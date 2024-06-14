@@ -1,4 +1,4 @@
-package com.example.space_x
+package com.colonal.space_x
 
 import io.flutter.embedding.android.FlutterActivity
 
