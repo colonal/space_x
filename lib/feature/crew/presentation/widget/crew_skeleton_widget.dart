@@ -79,25 +79,28 @@ class CrewSkeletonWidget extends StatelessWidget {
     );
   }
 
-  Row _buildInfoSkeletonWidget() {
-    return Row(
-      children: [
-        SizedBox(
-          height: 20,
-          width: 35,
-          child: LoadingAnimationWidget(
-            borderRadius: BorderRadius.circular(20),
+  Widget _buildInfoSkeletonWidget() {
+    return FittedBox(
+      fit: BoxFit.scaleDown,
+      child: Row(
+        children: [
+          SizedBox(
+            height: 20,
+            width: 35,
+            child: LoadingAnimationWidget(
+              borderRadius: BorderRadius.circular(20),
+            ),
           ),
-        ),
-        const SizedBox(width: 10),
-        SizedBox(
-          height: 20,
-          width: 100,
-          child: LoadingAnimationWidget(
-            borderRadius: BorderRadius.circular(8),
+          const SizedBox(width: 10),
+          SizedBox(
+            height: 20,
+            width: 100,
+            child: LoadingAnimationWidget(
+              borderRadius: BorderRadius.circular(8),
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
