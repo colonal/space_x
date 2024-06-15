@@ -9,23 +9,24 @@ class CompanyLoadingWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.sizeOf(context);
     return Scaffold(
-      body: LayoutBuilder(builder: (context, constraints) {
-        return SizedBox(
-          width: constraints.maxWidth,
-          height: constraints.maxHeight,
-          child: Column(
-            children: [
-              const CompanyHeader(),
-              const CompanyLogo(),
-              const SizedBox(height: 30),
-              Expanded(
-                child: Align(
+      body: SizedBox(
+        width: size.width,
+        height: size.height,
+        child: Column(
+          children: [
+            const CompanyHeader(),
+            const CompanyLogo(),
+            const SizedBox(height: 20),
+            Expanded(
+              child: LayoutBuilder(builder: (context, constraints) {
+                return Align(
                   alignment: Alignment.bottomCenter,
-                  child: SizedBox(
-                    width: constraints.maxWidth,
-                    child: FittedBox(
-                      fit: BoxFit.scaleDown,
+                  child: FittedBox(
+                    fit: BoxFit.scaleDown,
+                    child: SizedBox(
+                      width: constraints.maxWidth,
                       child: Padding(
                         padding: const EdgeInsets.only(bottom: 20),
                         child: Image.asset(
@@ -37,12 +38,12 @@ class CompanyLoadingWidget extends StatelessWidget {
                       ),
                     ),
                   ),
-                ),
-              ),
-            ],
-          ),
-        );
-      }),
+                );
+              }),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
