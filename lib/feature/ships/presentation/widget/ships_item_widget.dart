@@ -26,104 +26,111 @@ class ShipsItemWidget extends StatelessWidget {
       ),
       child: Padding(
         padding: const EdgeInsets.all(15),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            ClipRRect(
-              borderRadius: BorderRadius.circular(15),
-              child: ImageNetworkWidget(
-                ship.image ?? "",
-                height: 200,
-                width: double.infinity,
-                fit: BoxFit.cover,
+        child: LayoutBuilder(builder: (context, constraints) {
+          return Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              ClipRRect(
+                borderRadius: BorderRadius.circular(15),
+                child: ImageNetworkWidget(
+                  ship.image ?? "",
+                  height: 200,
+                  width: double.infinity,
+                  fit: BoxFit.cover,
+                ),
               ),
-            ),
-            const SizedBox(height: 10),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                _buildInfoWidget(
-                  context,
-                  title: "ships.${ship.active ?? false ? 'active' : 'inactive'}"
-                      .tr(),
-                  assetName: ship.active ?? false
-                      ? AssetsImages.activeSVG
-                      : AssetsImages.inactiveSVG,
-                  includeColor: false,
-                ),
-                _buildInfoWidget(
-                  context,
-                  title: ship.type ?? "",
-                  assetName: AssetsImages.launchSVG,
-                ),
-                _buildInfoWidget(
-                  context,
-                  title: "${ship.yearBuilt}",
-                  assetName: AssetsImages.calendarSVG,
-                ),
-              ],
-            ),
-            const SizedBox(height: 20),
-            Text(
-              ship.legacyId ?? "",
-              style: context.font12BlueBold,
-            ),
-            const SizedBox(height: 5),
-            Text(
-              ship.name ?? "",
-              style: context.font24WhiteBold,
-            ),
-            const SizedBox(height: 20),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    _buildInfoWidget(
-                      context,
-                      title: "ships.launches"
-                          .tr(args: [(ship.launches ?? []).length.toString()]),
-                      assetName: AssetsImages.stagesSVG,
+              const SizedBox(height: 10),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  _buildInfoWidget(
+                    context,
+                    title:
+                        "ships.${ship.active ?? false ? 'active' : 'inactive'}"
+                            .tr(),
+                    assetName: ship.active ?? false
+                        ? AssetsImages.activeSVG
+                        : AssetsImages.inactiveSVG,
+                    includeColor: false,
+                  ),
+                  _buildInfoWidget(
+                    context,
+                    title: ship.type ?? "",
+                    assetName: AssetsImages.launchSVG,
+                  ),
+                  _buildInfoWidget(
+                    context,
+                    title: "${ship.yearBuilt}",
+                    assetName: AssetsImages.calendarSVG,
+                  ),
+                ],
+              ),
+              const SizedBox(height: 20),
+              Text(
+                ship.legacyId ?? "",
+                style: context.font12BlueBold,
+              ),
+              const SizedBox(height: 5),
+              Text(
+                ship.name ?? "",
+                style: context.font24WhiteBold,
+              ),
+              const SizedBox(height: 20),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        _buildInfoFlexibleWidget(
+                          context,
+                          title: "ships.launch".tr(
+                              args: [(ship.launches ?? []).length.toString()]),
+                          assetName: AssetsImages.stagesSVG,
+                        ),
+                        const SizedBox(height: 10),
+                        _buildInfoFlexibleWidget(
+                          context,
+                          title: (ship.roles ?? ['']).first,
+                          assetName: AssetsImages.shipRoleSVG,
+                        ),
+                      ],
                     ),
-                    const SizedBox(height: 10),
-                    _buildInfoWidget(
-                      context,
-                      title: (ship.roles ?? ['']).first,
-                      assetName: AssetsImages.shipRoleSVG,
+                  ),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        _buildInfoFlexibleWidget(
+                          context,
+                          title: ship.homePort ?? "",
+                          assetName: AssetsImages.homeSVG,
+                        ),
+                        const SizedBox(height: 10),
+                        GestureDetector(
+                          onTap: () => _launchUrl(context, ship.link),
+                          child: _buildInfoFlexibleWidget(
+                            context,
+                            title: 'ships.see_article'.tr(),
+                            assetName: AssetsImages.linkSVG,
+                            textColor: ColorsManager.mainBlue,
+                          ),
+                        ),
+                      ],
                     ),
-                  ],
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    _buildInfoWidget(
-                      context,
-                      title: ship.homePort ?? "",
-                      assetName: AssetsImages.homeSVG,
-                    ),
-                    const SizedBox(height: 10),
-                    GestureDetector(
-                      onTap: () => _launchUrl(context, ship.link),
-                      child: _buildInfoWidget(
-                        context,
-                        title: 'ships.see_article'.tr(),
-                        assetName: AssetsImages.linkSVG,
-                        textColor: ColorsManager.mainBlue,
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-            const SizedBox(height: 10),
-          ],
-        ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 10),
+            ],
+          );
+        }),
       ),
     );
   }
 
-  Row _buildInfoWidget(
+  Widget _buildInfoWidget(
     BuildContext context, {
     required String title,
     required String assetName,
@@ -148,6 +155,39 @@ class ShipsItemWidget extends StatelessWidget {
           title,
           style: context.font14WhiteLight?.copyWith(
             color: textColor,
+          ),
+          overflow: TextOverflow.ellipsis,
+        ),
+      ],
+    );
+  }
+
+  Widget _buildInfoFlexibleWidget(
+    BuildContext context, {
+    required String title,
+    required String assetName,
+    Color? textColor,
+  }) {
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        SvgPicture.asset(
+          assetName,
+          width: 20,
+          height: 20,
+          colorFilter: ColorFilter.mode(
+            textColor ?? context.theme.primaryColorLight,
+            BlendMode.srcIn,
+          ),
+        ),
+        const SizedBox(width: 5),
+        Flexible(
+          child: Text(
+            title,
+            style: context.font14WhiteLight?.copyWith(
+              color: textColor,
+            ),
+            overflow: TextOverflow.ellipsis,
           ),
         ),
       ],
