@@ -15,11 +15,12 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: SvgPicture.asset(AssetsImages.logoSVG),
         centerTitle: false,
-        actions: [
-          SvgPicture.asset(AssetsImages.bookmarkSVG),
-          const SizedBox(width: 26),
-          SvgPicture.asset(AssetsImages.searchSVG),
-          const SizedBox(width: 20),
+        actions: const [
+          // TODO: add bookmark and search
+          // SvgPicture.asset(AssetsImages.bookmarkSVG),
+          // const SizedBox(width: 26),
+          // SvgPicture.asset(AssetsImages.searchSVG),
+          // const SizedBox(width: 20),
         ],
       ),
       body: const Padding(
