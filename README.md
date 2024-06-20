@@ -1,6 +1,10 @@
 # SpaceSyncX 
 <img src="assets\launcher_icons\logo.png" height="100em"/>
 
+[![Version](https://img.shields.io/github/v/release/colonal/space_x?include_prereleases&sort=semver)](https://github.com/colonal/space_x/releases/latest)
+[![Google Paly](https://playbadges.pavi2410.me/badge/downloads?id=com.colonal.space_x)](https://play.google.com/store/apps/details?id=com.colonal.space_x)
+[![Github Downloads](https://img.shields.io/github/downloads/colonal/space_x/total?logo=Github)](https://github.com/colonal/space_x/releases)
+
 ### 🚀 Welcome to the SpaceX App repository! 🌌
 
 Embark on a cosmic journey with our captivating app designed for space enthusiasts like you! Stay updated on upcoming SpaceX rocket launches, explore intricate details about rockets and crew members, and immerse yourself in the boundless excitement of space exploration.
@@ -46,14 +50,9 @@ Embark on a cosmic journey with our captivating app designed for space enthusias
    - Explore general information about SpaceX, such as its history, founder, valuation, and headquarters.
 
 ## Screenshot
-<img src="screenshot/0.png" height="200em"/>
-<img src="screenshot/1.png" height="200em"/>
-<img src="screenshot/2.png" height="200em"/>
-<img src="screenshot/3.png" height="200em"/>
-<img src="screenshot/4.png" height="200em"/>
-<img src="screenshot/5.png" height="200em"/>
-<img src="screenshot/6.png" height="200em"/>
-<img src="screenshot/7.png" height="200em"/>
-<img src="screenshot/8.png" height="200em"/>
-<img src="screenshot/9.png" height="200em"/>
+<img src="screenshot/0.png" height="200em"/> <br> 
+<img src="screenshot/1.png" height="200em" width="90em"/> <img src="screenshot/2.png" height="200em" width="90em"/> <img src="screenshot/3.png" height="200em" width="90em"/><br>
+<img src="screenshot/4.png" height="200em"/> <img src="screenshot/5.png" height="200em"/><br>
+<img src="screenshot/6.png" height="200em"/> <img src="screenshot/7.png" height="200em"/><br>
+<img src="screenshot/8.png" height="200em"/> <img src="screenshot/9.png" height="200em"/><br>
 
